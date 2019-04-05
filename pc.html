@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Shailendra Paliwal">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Leaflet Map Template - ziscore</title>
+    <title>Parliamentary Constituencies - ziscore</title>
 
     <!-- Bootstrap core CSS -->
     <link href="index_files/bootstrap.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -36,8 +36,8 @@
     <div class="inner">
       <h3 class="masthead-brand">Indian States - Map</h3>
       <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="index.htm">Indian States</a>
-        <a class="nav-link" href="pc.htm">Parliament Constituencies</a>
+        <a class="nav-link" href="index.htm">Indian States</a>
+        <a class="nav-link active" href="pc.htm">Parliament Constituencies</a>
         <a class="nav-link" href="contact.htm">Contact</a>
       </nav>
     </div>
@@ -66,7 +66,7 @@
   }).addTo(map);
 
   // shape boundaries
-  var geojsonLayer = new L.GeoJSON.AJAX("maps/india-states-geojson.json");       
+  var geojsonLayer = new L.GeoJSON.AJAX("maps/parliamentary-constituencies.json");       
   geojsonLayer.addTo(map);
 
 </script>
