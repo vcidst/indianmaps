@@ -65,34 +65,9 @@
     id: 'mapbox.light'
   }).addTo(map);
 
-  L.TopoJSON = L.GeoJSON.extend({  
-    addData: function(jsonData) {    
-      if (jsonData.type === 'Topology') {
-        for (key in jsonData.objects) {
-          geojson = topojson.feature(jsonData, jsonData.objects[key]);
-          L.GeoJSON.prototype.addData.call(this, geojson);
-        }
-      }    
-      else {
-        L.GeoJSON.prototype.addData.call(this, jsonData);
-      }
-    }  
-  });
-  // Copyright (c) 2013 Ryan Clark
-
-  const topoLayer = new L.TopoJSON();
-
-  $.getJSON('maps/parliamentary-constituencies.json')
-    .done(addTopoData);
-
-  function addTopoData(topoData) {  
-    topoLayer.addData(topoData);
-    topoLayer.addTo(map);
-  }
-
   // shape boundaries
-  //var geojsonLayer = new L.GeoJSON.AJAX("");       
-  //geojsonLayer.addTo(map);
+  var geojsonLayer = new L.GeoJSON.AJAX("maps/parliamentary-constituencies-geojson.json");       
+  geojsonLayer.addTo(map);
 
 </script>
 
